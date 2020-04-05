@@ -23,7 +23,7 @@ class Category extends Model
     ];
 
     public function posts() {
-        $this->hasMany(Post::class, 'cat_id', 'id');
+        $this->hasMany(Post::class);
     }
 
 

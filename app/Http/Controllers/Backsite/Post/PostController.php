@@ -33,7 +33,7 @@ class PostController extends Controller
     public function create()
     {
         //
-        $categories = Category::select('id','name')->orderBy('id', 'asc')->get();
+        $categories = Category::select('id','name')->where('status', 1)->orderBy('id', 'asc')->get();
 
         return view('backsite.admin.post.create-form', compact('categories'));
 
@@ -166,19 +166,19 @@ class PostController extends Controller
 //        echo $post_data_update->image;
 
 
-        $request->validate([
-            'title' => 'required|max:100',
-            'desc' => 'required',
-            'image' => 'image',
-            'status' => 'required',
-
-        ], [
-            'title.required' => 'Post title field must be filled out!',
-            'title.max' => 'Post title must be less than 100 Character\'s!',
-            'image.images' => 'Image file must be png,jpeg/jpg extension!',
-            'status.required' => 'Status field option must be selected!',
-
-        ]);
+//        $request->validate([
+//            'title' => 'required|max:100',
+//            'desc' => 'required',
+//            'image' => 'image',
+//            'status' => 'required',
+//
+//        ], [
+//            'title.required' => 'Post title field must be filled out!',
+//            'title.max' => 'Post title must be less than 100 Character\'s!',
+//            'image.images' => 'Image file must be png,jpeg/jpg extension!',
+//            'status.required' => 'Status field option must be selected!',
+//
+//        ]);
 
         //        return base64_decode($id);
         $post_id = base64_decode($id);
@@ -291,6 +291,8 @@ class PostController extends Controller
 //        return base64_decode($id);
         $post_id = base64_decode($id);
         $post_delete = Post::find($post_id);
+
+        unlink(public_path('uploads/images/posts/'.$post_delete->image));
 
         $post_delete->delete();
 

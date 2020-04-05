@@ -48,7 +48,7 @@
                     <select name="cat_id" id="cat_id" class="form-control">
                         <option value="" disabled>Select Categoty Name</option>
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}" {{ $category->cat_id == 1 ? 'selected' : '' }}>{{ $category->name }}</option>
+                            <option {{ $category->id == $post_edit_data->cat_id ? 'selected' : '' }} value="{{ $category->id }}" {{ $category->cat_id == 1 ? 'selected' : '' }}>{{ $category->name }}</option>
                         @endforeach
 
                     </select>
@@ -73,15 +73,15 @@
                     <label for="status">Post Status</label>
                     <br>
                     <div class="form-check form-check-inline">
-                        <input type="radio" id="status" class="form-check-input" name="status" value="draft">
+                        <input {{ $post_edit_data->status == 'draft' ? 'checked' : '' }} type="radio" id="status" class="form-check-input" name="status" value="draft">
                         <label for="status" class="form-check-label">Draft</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" id="status" class="form-check-input" name="status" value="published">
+                        <input {{ $post_edit_data->status == 'published' ? 'checked' : '' }} type="radio" id="status" class="form-check-input" name="status" value="published">
                         <label for="status" class="form-check-label">Published</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" id="status" class="form-check-input" name="status" value="private">
+                        <input {{ $post_edit_data->status == 'private' ? 'checked' : '' }} type="radio" id="status" class="form-check-input" name="status" value="private">
                         <label for="status" class="form-check-label">Private</label>
                     </div>
                 </div>
