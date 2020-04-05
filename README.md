@@ -1,2 +1,2 @@
-# lara-7-blog
+Laravel 7* version Mini Blog Application.
  
