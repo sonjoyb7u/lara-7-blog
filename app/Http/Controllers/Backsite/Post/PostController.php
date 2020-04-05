@@ -45,26 +45,26 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         //
 //        return $request->all();
 
-        $request->validate([
-            'title' => 'required|unique:posts|max:100',
-            'desc' => 'required',
-            'image' => 'required|image',
-            'status' => 'required',
-
-        ], [
-            'title.required' => 'Post title field must be filled out!',
-            'title.unique' => 'Post title has already been taken!',
-            'title.max' => 'Post title must be less than 100 Character\'s!',
-            'image.required' => 'Image field must be filled out!',
-            'image.images' => 'Image file must be png,jpeg/jpg extension!',
-            'status.required' => 'Status field option must be selected!',
-
-        ]);
+//        $request->validate([
+//            'title' => 'required|unique:posts|max:100',
+//            'desc' => 'required',
+//            'image' => 'required|image',
+//            'status' => 'required',
+//
+//        ], [
+//            'title.required' => 'Post title field must be filled out!',
+//            'title.unique' => 'Post title has already been taken!',
+//            'title.max' => 'Post title must be less than 100 Character\'s!',
+//            'image.required' => 'Image field must be filled out!',
+//            'image.images' => 'Image file must be png,jpeg/jpg extension!',
+//            'status.required' => 'Status field option must be selected!',
+//
+//        ]);
 
         $image_file = $request->file('image');
         $image_file_ext = $image_file->getClientOriginalExtension();
@@ -160,7 +160,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
         //
 //        echo $post_data_update->image;
