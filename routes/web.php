@@ -36,20 +36,24 @@ Route::name('blog.')->namespace('Frontsite')->group(function(){
 
 });
 
-//User Registration Route...
-Route::post('register', 'AuthController@processRegister');
-Route::get('register', 'AuthController@showRegisterForm')->name('register');
+Route::namespace('Backsite\Auth')->group(function () {
+    //User Registration Route...
+    Route::post('register', 'AuthController@processRegister');
+    Route::get('register', 'AuthController@showRegisterForm')->name('register');
 
 //User Login Route...
-Route::post('login', 'AuthController@processLogin');
-Route::get('login', 'AuthController@showLoginForm')->name('login');
+    Route::post('login', 'AuthController@processLogin');
+    Route::get('login', 'AuthController@showLoginForm')->name('login');
 
 //User Logout Route...
-Route::get('logout', 'AuthController@logout')->name('logout');
+    Route::get('logout', 'AuthController@logout')->name('logout');
+
+});
+
 
 
 //Backsite - view page...
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
         Route::get('/dashboard', 'Backsite\BacksiteController@index')->name('dashboard');
 
     Route::prefix('category')->name('categories.')->namespace('Backsite\Category')->group(function () {
