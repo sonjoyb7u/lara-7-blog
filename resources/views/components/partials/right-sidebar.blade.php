@@ -8,7 +8,7 @@
         <h4 class="font-italic">Categories : </h4>
         <ol class="list-unstyled p-2">
             @foreach($categories as $category)
-                <li><a href="#">{{ $category->name }}</a></li>
+                <li><a href="{{ route('blog.totalPost', $category->id) }}">{{ $category->name }}</a></li>
             @endforeach
         </ol>
     </div>
@@ -16,9 +16,9 @@
     <div class="p-4">
         <h4 class="font-italic">Social Links : </h4>
         <ol class="list-unstyled">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
+            <li><a target="_blank" href="https://www.github.com">GitHub</a></li>
+            <li><a target="_blank" href="https://www.twitter.com">Twitter</a></li>
+            <li><a target="_blank" href="https://www.facebook.com">Facebook</a></li>
         </ol>
     </div>
 

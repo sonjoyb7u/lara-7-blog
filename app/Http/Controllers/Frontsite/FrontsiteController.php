@@ -26,6 +26,17 @@ class FrontsiteController extends Controller
         return view('frontsite.single-post', compact( 'single_post', 'categories'));
     }
 
+    public function categoryWisePost($id) {
+
+//        $category_id = Category::find($id);
+
+        $totalPosts = Category::with('posts', 'posts.user')->select('id', 'name', 'status', 'created_at')->find($id);
+
+        dd($totalPosts);
+
+
+    }
+
 
 
 

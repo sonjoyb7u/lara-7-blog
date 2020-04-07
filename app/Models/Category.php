@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Post;
 
 class Category extends Model
 {
@@ -18,12 +19,9 @@ class Category extends Model
         'name', 'slug', 'status',
     ];
 
-    protected $hidden = [
-        'slug',
-    ];
 
     public function posts() {
-        $this->hasMany(Post::class);
+        $this->hasMany(Post::class, 'cat_id', 'id');
     }
 
 

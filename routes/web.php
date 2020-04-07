@@ -33,6 +33,7 @@ Route::get('this/is/about/page', [
 Route::name('blog.')->namespace('Frontsite')->group(function(){
     Route::get('/', 'FrontsiteController@index')->name('index');
     Route::get('single_post/{id}', 'FrontsiteController@showSinglePost')->name('single_post');
+//    Route::get('totalPost/{id}', 'FrontsiteController@categoryWisePost')->name('totalPost');
 
 });
 
@@ -61,7 +62,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
         Route::get('/create', 'CategoryController@create')->name('create');
         Route::post('/store', 'CategoryController@store')->name('store');
         Route::get('/show/{id}', 'CategoryController@show')->name('view');
-        Route::get('/edit/{id}/{title}', 'CategoryController@edit')->name('edit');
+        Route::get('/edit/{id}', 'CategoryController@edit')->name('edit');
         Route::post('/update/{id}', 'CategoryController@update')->name('update');
         Route::delete('/delete/{id}', 'CategoryController@destroy')->name('delete');
 

@@ -68,8 +68,8 @@
 
                     </td>
                     <td>
-                        <a href="{{ route('categories.view', [base64_encode($category->id), $category->slug]) }}" class="btn btn-info btn-sm">View</a>
-                        <a href="{{ route('categories.edit', [base64_encode($category->id), $category->slug]) }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="{{ route('categories.view', base64_encode($category->id)) }}" class="btn btn-info btn-sm">View</a>
+                        <a href="{{ route('categories.edit', [$category->slug, base64_encode($category->id)]) }}" class="btn btn-primary btn-sm">Edit</a>
                         {{--<span style="display: inline-block">--}}
                             {{--<form action="{{ route('categories.update', base64_encode($category->id)) }}" method="post">--}}
                                 {{--@csrf--}}
@@ -79,7 +79,7 @@
                         {{--</span>--}}
 
                         <span style="display: inline-block">
-                            <form action="{{ route('categories.delete', [base64_encode($category->id), $category->slug]) }}" method="post">
+                            <form action="{{ route('categories.delete', [base64_encode($category->id)]) }}" method="post">
                                 @csrf
                                 @method('DELETE')
 

@@ -129,7 +129,10 @@ class PostController extends Controller
         //
         $post_id = base64_decode($id);
 
-        return $post = Post::find($post_id);
+        $post = Post::with('category', 'user')->find($post_id);
+
+        return $post;
+
     }
 
     /**

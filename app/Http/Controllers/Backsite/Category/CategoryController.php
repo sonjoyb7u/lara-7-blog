@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backsite\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use App\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -20,6 +21,7 @@ class CategoryController extends Controller
     {
         //
         $categories = Category::select('id', 'name', 'slug', 'status')->orderBy('id', 'asc')->paginate(5);
+
         return view('backsite.admin.category.manage', compact('categories'));
     }
 
@@ -94,7 +96,9 @@ class CategoryController extends Controller
         //
         $category_id = base64_decode($id);
 
-        return $category = Category::find($category_id);
+        $category = Category::with('posts', 'posts.user')->find($category_id);
+
+        return $category;
 
     }
 

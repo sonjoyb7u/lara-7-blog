@@ -8,13 +8,14 @@ use App\Http\Requests\RegisterRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use App\Models\Category;
 
 class AuthController extends Controller
 {
     //
     public function showRegisterForm() {
-//        $categories = ['Home', 'Food', 'Bd News', 'World News', 'Tour & Travels', 'Sports News', 'Political News'];
-        return view('frontsite.register');
+        $categories = Category::orderBy('id', 'asc')->get();
+        return view('frontsite.register', 'categories');
     }
 
     public function processRegister(RegisterRequest $request) {
@@ -123,7 +124,7 @@ class AuthController extends Controller
 
 
     public function showLoginForm() {
-        $categories = ['Home', 'Food', 'Bd News', 'World News', 'Tour & Travels', 'Sports News', 'Political News'];
+        $categories = Category::orderBy('id', 'asc')->get();
         return view('frontsite.login', compact('categories'));
 
     }
