@@ -25,11 +25,27 @@
     </div>
 </header>
 
-<div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-        <a class="p-3 text-muted" href="{{ route('blog.index') }}">
-            HOME
-        </a>
+<div class="m-3">
+    <nav class="nav navbar-expand-sm">
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="p-3 text-muted" href="{{ route('blog.index') }}">
+                    HOME
+                </a>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="p-3 text-muted dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    CATEGORIES
+                </a>
+                <div class="dropdown-menu">
+                    @foreach($categories as $category)
+                        <a class="dropdown-item" href="#">{{ $category->name }}</a>
+                    @endforeach
+                </div>
+            </li>
+        </ul>
     </nav>
 </div>
 

@@ -32,7 +32,7 @@ Route::get('this/is/about/page', [
 //Frontsite - Lara Blog site view...
 Route::name('blog.')->namespace('Frontsite')->group(function(){
     Route::get('/', 'FrontsiteController@index')->name('index');
-    Route::get('single_post', 'FrontsiteController@showSinglePost')->name('single_post');
+    Route::get('single_post/{id}', 'FrontsiteController@showSinglePost')->name('single_post');
 
 });
 

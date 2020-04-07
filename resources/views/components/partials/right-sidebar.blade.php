@@ -5,18 +5,16 @@
     </div>
 
     <div class="p-4">
-        <h4 class="font-italic">Archives</h4>
-        <ol class="list-unstyled mb-0">
-            <li><a href="#">March 2014</a></li>
-            <li><a href="#">February 2014</a></li>
-            <li><a href="#">January 2014</a></li>
-            <li><a href="#">December 2013</a></li>
-            <li><a href="#">November 2013</a></li>
+        <h4 class="font-italic">Categories : </h4>
+        <ol class="list-unstyled p-2">
+            @foreach($categories as $category)
+                <li><a href="#">{{ $category->name }}</a></li>
+            @endforeach
         </ol>
     </div>
 
     <div class="p-4">
-        <h4 class="font-italic">Elsewhere</h4>
+        <h4 class="font-italic">Social Links : </h4>
         <ol class="list-unstyled">
             <li><a href="#">GitHub</a></li>
             <li><a href="#">Twitter</a></li>
