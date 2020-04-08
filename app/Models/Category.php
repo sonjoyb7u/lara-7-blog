@@ -19,10 +19,10 @@ class Category extends Model
         'name', 'slug', 'status',
     ];
 
-
     public function posts() {
-        $this->hasMany(Post::class, 'cat_id', 'id');
+        return $this->hasMany(Post::class, 'cat_id', 'id');
     }
+
 
 
 }

@@ -15,7 +15,7 @@
             <ul>
                 <li style="list-style: none;">
                     <a class="p-3 text-muted {{ request()->is('category') ? 'active' : '' }}" href="{{ route('categories.index') }}">
-                        Category
+                        All Categories
                     </a>
                 </li>
                 <li style="list-style: none;">

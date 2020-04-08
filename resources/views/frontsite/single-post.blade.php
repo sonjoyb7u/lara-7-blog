@@ -15,7 +15,7 @@
 @section('content')
             <div class="blog-post">
                 <h2 class="blog-post-title">{{ $single_post->title }}</h2>
-                <p class="blog-post-meta">{{ $single_post->created_at }} by <a href="#">{{ $single_post->user->full_name }}</a></p>
+                <p class="blog-post-meta">{{ date('d M Y', strtotime($single_post->created_at)) }} by <a href="#">{{ $single_post->user->full_name }}</a></p>
                 <img width="100%" height="300" src="{{ asset('uploads/images/posts/'.$single_post->image) }}" alt="">
                 <h3 class="mt-3">Description : </h3>
                 <p>

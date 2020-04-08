@@ -15,7 +15,7 @@ class AuthController extends Controller
     //
     public function showRegisterForm() {
         $categories = Category::orderBy('id', 'asc')->get();
-        return view('frontsite.register', 'categories');
+        return view('frontsite.register', compact('categories'));
     }
 
     public function processRegister(RegisterRequest $request) {

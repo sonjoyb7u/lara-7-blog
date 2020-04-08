@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backsite\Category;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
+use App\Models\Post;
 use App\Models\Category;
 use App\User;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -94,11 +96,18 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
-        $category_id = base64_decode($id);
+        $cat_id = base64_decode($id);
+//        return $cat_id;
 
-        $category = Category::with('posts', 'posts.user')->find($category_id);
+        $category = Category::with('posts')->select('id', 'name', 'slug', 'status', 'created_at')->find($cat_id);
+//        return $category;
+//        dd($category);
 
-        return $category;
+//        $posts = Post::where('cat_id', $id)->get();
+//        return $posts;
+//        dd($posts);
+
+        return view('backsite.admin.category.view', compact('category'));
 
     }
 

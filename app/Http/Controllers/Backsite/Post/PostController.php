@@ -22,6 +22,9 @@ class PostController extends Controller
         //
         $posts = Post::with('category', 'user')->orderBy('id', 'asc')->paginate(5);
 
+//        dd($posts);
+//        return $posts;
+
         return view('backsite.admin.post.manage', compact('posts'));
     }
 

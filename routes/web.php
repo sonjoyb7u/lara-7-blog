@@ -33,7 +33,7 @@ Route::get('this/is/about/page', [
 Route::name('blog.')->namespace('Frontsite')->group(function(){
     Route::get('/', 'FrontsiteController@index')->name('index');
     Route::get('single_post/{id}', 'FrontsiteController@showSinglePost')->name('single_post');
-//    Route::get('totalPost/{id}', 'FrontsiteController@categoryWisePost')->name('totalPost');
+    Route::get('category/{slug}', 'FrontsiteController@categoryWisePost')->name('category');
 
 });
 
@@ -42,11 +42,11 @@ Route::namespace('Backsite\Auth')->group(function () {
     Route::post('register', 'AuthController@processRegister');
     Route::get('register', 'AuthController@showRegisterForm')->name('register');
 
-//User Login Route...
+    //User Login Route...
     Route::post('login', 'AuthController@processLogin');
     Route::get('login', 'AuthController@showLoginForm')->name('login');
 
-//User Logout Route...
+    //User Logout Route...
     Route::get('logout', 'AuthController@logout')->name('logout');
 
 });
@@ -69,6 +69,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
 
     });
 
+//    Route::resource('categories', 'Backsite\Category\CategoryController');
+
+
     Route::prefix('post')->name('posts.')->namespace('Backsite\Post')->group(function () {
         Route::get('/', 'PostController@index')->name('index');
         Route::get('/create', 'PostController@create')->name('create');
@@ -80,6 +83,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
 
 
     });
+
+//    Route::resource('posts', 'Backsite\Post\PostController');
 
 
 });

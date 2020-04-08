@@ -5,10 +5,13 @@
     </div>
 
     <div class="p-4">
-        <h4 class="font-italic">Categories : </h4>
-        <ol class="list-unstyled p-2">
-            @foreach($categories as $category)
-                <li><a href="{{ route('blog.totalPost', $category->id) }}">{{ $category->name }}</a></li>
+        <h4 class="font-italic">Archives - ( All )</h4>
+        <ol class="list-unstyled mb-0">
+            @foreach($date_wise_posts as $post)
+                <li>
+                    <a href="{{ route('blog.single_post', base64_encode($post->id)) }}">{{ $post->title }}</a>
+                    <span> - ( {{ date('d M Y', strtotime($post->created_at)) }} )</span>
+                </li>
             @endforeach
         </ol>
     </div>

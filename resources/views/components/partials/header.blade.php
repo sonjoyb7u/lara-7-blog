@@ -33,6 +33,11 @@
                 <a class="p-3 text-muted" href="{{ route('blog.index') }}">
                     HOME
                 </a>
+                {{--@foreach($categories as $category)--}}
+                {{--<a class="p-3 text-muted" href="{{ route('blog.index') }}">--}}
+                    {{--{{ $category->name }}--}}
+                {{--</a>--}}
+                {{--@endforeach--}}
             </li>
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -41,7 +46,7 @@
                 </a>
                 <div class="dropdown-menu">
                     @foreach($categories as $category)
-                        <a class="dropdown-item" href="#">{{ $category->name }}</a>
+                        <a class="dropdown-item" href="{{ route('blog.category', $category->slug) }}">{{ $category->name }}</a>
                     @endforeach
                 </div>
             </li>
