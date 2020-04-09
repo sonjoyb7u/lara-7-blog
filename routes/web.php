@@ -93,29 +93,4 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
 
 
 
-/*
-//User Registration-Login Route...
-
-    Route::post('register', 'AuthController@processRegister');
-    Route::get('register', 'AuthController@showRegisterForm')->name('blog.register');
-
-    Route::post('login', 'AuthController@processLogin');
-    Route::get('login', 'AuthController@showLoginForm')->name('blog.login');
-
-    Route::get('logout', 'AuthController@logout')->name('blog.logout');
-
-
-//Backsite - view page...
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('home', 'Backsite\BacksiteController@index')->name('home');
-
-
-        Route::get('/', 'Backsite\Category\CategoryController@index')->name('index');
-
-
-
-});
-
-*/
-
 
