@@ -38,6 +38,7 @@
         <div class="card-body">
             <form action="{{ route('posts.update', base64_encode($post_edit_data->id)) }}" method="post" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
 
                 <div class="form-group">
                     <label for="title">Post Title</label>

@@ -33,6 +33,7 @@
         <div class="card-body">
             <form action="{{ route('categories.update', base64_encode($category_edit_data->id)) }}" method="post">
                 @csrf
+                @method('PUT')
 
                 <div class="form-group">
                     <label for="name">Category Name</label>

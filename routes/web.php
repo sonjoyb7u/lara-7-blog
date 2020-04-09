@@ -63,7 +63,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
         Route::post('/store', 'CategoryController@store')->name('store');
         Route::get('/show/{id}', 'CategoryController@show')->name('view');
         Route::get('/edit/{id}', 'CategoryController@edit')->name('edit');
-        Route::post('/update/{id}', 'CategoryController@update')->name('update');
+        Route::put('/update/{id}', 'CategoryController@update')->name('update');
         Route::delete('/delete/{id}', 'CategoryController@destroy')->name('delete');
 
 
@@ -78,7 +78,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
         Route::post('/store', 'PostController@store')->name('store');
         Route::get('/show/{id}', 'PostController@show')->name('view');
         Route::get('/edit/{id}', 'PostController@edit')->name('edit');
-        Route::post('/update/{id}', 'PostController@update')->name('update');
+        Route::put('/update/{id}', 'PostController@update')->name('update');
         Route::delete('/delete/{id}', 'PostController@destroy')->name('delete');
 
 

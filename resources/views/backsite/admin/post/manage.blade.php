@@ -42,9 +42,9 @@
                 <thead>
                 <tr class="text-center">
                     <th style="width: 5%">SL No.</th>
-                    <th>Post Title</th>
-                    <th>Category Name</th>
-                    <th>Post Author</th>
+                    <th style="width: 5%">Post Title</th>
+                    <th style="width: 5%">Category Name</th>
+                    <th style="width: 5%">Post Author</th>
                     <th>Post Description</th>
                     <th>Post Image</th>
                     <th>Status</th>
