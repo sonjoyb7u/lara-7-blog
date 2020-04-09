@@ -9,13 +9,20 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Category;
+use App\Models\Post;
+use Illuminate\Support\Carbon;
 
 class AuthController extends Controller
 {
     //
     public function showRegisterForm() {
-        $categories = Category::orderBy('id', 'asc')->get();
-        return view('frontsite.register', compact('categories'));
+        $categories = Category::with('posts')->where('status', 1)->orderBy('id', 'asc')->get();
+
+        $posts = Post::with('category', 'user')->orderBy('id', 'desc')->simplePaginate(2);
+
+        $date_wise_posts = Post::with('category', 'user')->where("created_at",">", Carbon::now()->subMonths())->get();
+
+        return view('frontsite.register', compact('categories', 'posts', 'date_wise_posts'));
     }
 
     public function processRegister(RegisterRequest $request) {
@@ -124,8 +131,13 @@ class AuthController extends Controller
 
 
     public function showLoginForm() {
-        $categories = Category::orderBy('id', 'asc')->get();
-        return view('frontsite.login', compact('categories'));
+        $categories = Category::with('posts')->where('status', 1)->orderBy('id', 'asc')->get();
+
+        $posts = Post::with('category', 'user')->orderBy('id', 'desc')->simplePaginate(2);
+
+        $date_wise_posts = Post::with('category', 'user')->where("created_at",">", Carbon::now()->subMonths())->get();
+
+        return view('frontsite.login', compact('categories', 'posts', 'date_wise_posts'));
 
     }
 

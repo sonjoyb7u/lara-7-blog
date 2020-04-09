@@ -29,15 +29,18 @@ class FrontsiteController extends Controller
     }
 
     public function showSinglePost($id) {
-        $categories = Category::orderBy('id', 'asc')->get();
+        $categories = Category::with('posts')->orderBy('id', 'asc')->get();
+
+        $posts = Post::with('category', 'user')->orderBy('id', 'desc')->simplePaginate(2);
+
         $single_post = Post::with('user')->find(base64_decode($id));
 //        dd($single_posts);
 
 //        $date_wise_posts = Post::whereBetween('created_at', ['2020-04-02', '2021-01-01'])->select('id', 'title', 'created_at')->get();
 
-        $date_wise_posts = Post::where("created_at",">", Carbon::now()->subMonths())->get();
+        $date_wise_posts = Post::with('category', 'user')->where("created_at",">", Carbon::now()->subMonths())->get();
 
-        return view('frontsite.single-post', compact( 'categories', 'single_post', 'date_wise_posts'));
+        return view('frontsite.single-post', compact( 'categories', 'posts', 'single_post', 'date_wise_posts'));
     }
 
     public function categoryWisePost($slug) {
