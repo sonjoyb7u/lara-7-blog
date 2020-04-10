@@ -12,7 +12,7 @@
     @includeIf('components.partials.thumbnail')
 @endsection
 
-@section('content')
+@section('front-content')
             <div class="blog-post">
                 <h2 class="blog-post-title">{{ $single_post->title }}</h2>
                 <p class="blog-post-meta">{{ date('d M Y', strtotime($single_post->created_at)) }} by <a href="#">{{ $single_post->user->full_name }}</a></p>

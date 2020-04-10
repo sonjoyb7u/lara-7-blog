@@ -30,7 +30,7 @@
 @endsection
 
 
-@section('content')
+@section('back-content')
 
     <div class="card">
         <div class="card-header">

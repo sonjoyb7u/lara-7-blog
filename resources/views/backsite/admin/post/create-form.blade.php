@@ -29,7 +29,7 @@
     </div>
 @endsection
 
-@section('content')
+@section('back-content')
 <div class="card">
     <div class="card-header">
         <h2 class="text-center p-2">Add Category Form : </h2>

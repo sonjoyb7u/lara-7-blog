@@ -12,7 +12,7 @@
     @includeIf('components.partials.thumbnail')
 @endsection
 
-@section('content')
+@section('front-content')
     <div class="card">
         <div class="card-header">
             <h2 class="text-center p-2">Login Form : </h2>

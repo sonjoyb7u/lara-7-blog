@@ -30,7 +30,7 @@
 @endsection
 
 
-@section('content')
+@section('back-content')
 
     <div class="well">
         <h2>View Single Category : </h2>

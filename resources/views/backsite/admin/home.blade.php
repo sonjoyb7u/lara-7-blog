@@ -30,7 +30,7 @@
     </div>
 @endsection
 
-@section('content')
+@section('back-content')
     <h2 class="text-center">Admin Dashboard</h2>
 @endsection
 

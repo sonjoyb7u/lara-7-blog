@@ -13,7 +13,7 @@
             @auth()
                 <span>Hello,{{ ucwords(auth()->user()->full_name) }}</span>&nbsp;
                 <a class="btn btn-sm btn-outline-secondary" href="#">Profile</a>&nbsp;&nbsp;
-                {{--<a class="btn btn-sm btn-outline-secondary" href="{{ route('blog.index') }}">Home</a>&nbsp;--}}
+                <a target="_blank" class="btn btn-sm btn-outline-secondary" href="{{ route('blog.index') }}">Home</a>&nbsp;
                 <a class="btn btn-sm btn-outline-secondary" href="{{ route('logout') }}">Logout</a>
             @endauth
 

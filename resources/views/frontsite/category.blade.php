@@ -12,7 +12,7 @@
     @includeIf('components.partials.jumbotron')
 @endsection
 
-@section('content')
+@section('front-content')
     @if($cat_wise_posts)
     @foreach($cat_wise_posts->posts as $post)
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">

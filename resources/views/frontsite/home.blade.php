@@ -12,7 +12,7 @@
     @includeIf('components.partials.jumbotron')
 @endsection
 
-@section('content')
+@section('front-content')
     <h2>Latest Blog Post : </h2>
     @if($posts)
     @foreach($posts as $post)

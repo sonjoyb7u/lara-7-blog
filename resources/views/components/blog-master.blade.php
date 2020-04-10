@@ -61,27 +61,31 @@
 <main role="main" class="container">
     <div class="row">
 
-        @if(auth()->check())
+        @if(request()->is('admin*'))
             <aside class="col-md-3 blog-sidebar">
                 @yield('left-sidebar')
             </aside><!-- /.blog-sidebar -->
-
+        @endif
+        @if(request()->is('admin*'))
             <div class="col-md-9 blog-main">
                 @includeIf('message.message')
 
-                @yield('content')
+                @yield('back-content')
             </div><!-- /.blog-main -->
-        @else
-            <div class="col-md-8 blog-main">
-                @includeIf('message.message')
-
-                @yield('content')
-            </div><!-- /.blog-main -->
-
-            <aside class="col-md-4 blog-sidebar">
-                @yield('right-sidebar')
-            </aside><!-- /.blog-sidebar -->
         @endif
+
+        {{--@if(request()->is('/*'))--}}
+        <div class="col-md-8 blog-main">
+            @includeIf('message.message')
+
+            @yield('front-content')
+        </div><!-- /.blog-main -->
+        {{--@endif--}}
+        {{--@if(request()->is('/*'))--}}
+        <aside class="col-md-4 blog-sidebar">
+            @yield('right-sidebar')
+        </aside><!-- /.blog-sidebar -->
+        {{--@endif--}}
 
 
         {{--@yield('front-content')--}}
