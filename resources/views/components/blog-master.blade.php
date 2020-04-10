@@ -74,23 +74,16 @@
             </div><!-- /.blog-main -->
         @endif
 
-        {{--@if(request()->is('/*'))--}}
         <div class="col-md-8 blog-main">
             @includeIf('message.message')
 
             @yield('front-content')
         </div><!-- /.blog-main -->
-        {{--@endif--}}
-        {{--@if(request()->is('/*'))--}}
+
         <aside class="col-md-4 blog-sidebar">
             @yield('right-sidebar')
         </aside><!-- /.blog-sidebar -->
-        {{--@endif--}}
 
-
-        {{--@yield('front-content')--}}
-
-        {{--@yield('back-content')--}}
 
     </div><!-- /.row -->
 
