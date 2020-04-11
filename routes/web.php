@@ -55,7 +55,7 @@ Route::namespace('Backsite\Auth')->group(function () {
 
 //Backsite - view page...
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
-        Route::get('/dashboard', 'Backsite\BacksiteController@index')->name('dashboard');
+        Route::get('dashboard', 'Backsite\BacksiteController@index')->name('dashboard');
 
     Route::prefix('category')->name('categories.')->namespace('Backsite\Category')->group(function () {
         Route::get('/', 'CategoryController@index')->name('index');
@@ -72,19 +72,29 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
 //    Route::resource('categories', 'Backsite\Category\CategoryController');
 
 
-    Route::prefix('post')->name('posts.')->namespace('Backsite\Post')->group(function () {
+    Route::name('posts.')->prefix('post')->namespace('Backsite\Post')->group(function () {
         Route::get('/', 'PostController@index')->name('index');
         Route::get('/create', 'PostController@create')->name('create');
         Route::post('/store', 'PostController@store')->name('store');
         Route::get('/show/{id}', 'PostController@show')->name('view');
         Route::get('/edit/{id}', 'PostController@edit')->name('edit');
-        Route::put('/update/{id}', 'PostController@update')->name('update');
+        Route::post('/update/{id}', 'PostController@update')->name('update');
         Route::delete('/delete/{id}', 'PostController@destroy')->name('delete');
 
 
     });
 
 //    Route::resource('posts', 'Backsite\Post\PostController');
+
+    Route::name('sliders.')->prefix('slider')->namespace('Backsite\Slider')->group(function () {
+        Route::get('/', 'SliderController@index')->name('index');
+        Route::get('/create', 'SliderController@create')->name('create');
+        Route::post('/store', 'SliderController@store')->name('store');
+        Route::get('/show/{id}', 'SliderController@show')->name('view');
+        Route::get('/edit/{id}', 'SliderController@edit')->name('edit');
+        Route::post('/update/{id}', 'SliderController@update')->name('update');
+        Route::delete('/delete/{id}', 'SliderController@destroy')->name('delete');
+    });
 
 
 });

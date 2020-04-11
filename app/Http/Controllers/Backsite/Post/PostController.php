@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Exception;
 
 class PostController extends Controller
 {
@@ -111,7 +112,7 @@ class PostController extends Controller
                 }
             }
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 //            Session::flash('ErrorMsg', 'Invalid Image file!');
             $this->showMessage('danger','Error, Something went wrong!');
             return redirect()->back();
@@ -148,7 +149,7 @@ class PostController extends Controller
     {
         //
         $post_id = base64_decode($id);
-        $post_edit_data = Post::find($post_id);
+        $post_edit_data = Post::with('user')->find($post_id);
 
 //        return $post_edit_data;
 
@@ -169,8 +170,11 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
-//        echo $post_data_update->image;
 
+//        return base64_decode($id);
+        $post_id = base64_decode($id);
+//        return $post_id;
+        $post_old_data = Post::find($post_id);
 
 //        $request->validate([
 //            'title' => 'required|max:100',
@@ -181,65 +185,53 @@ class PostController extends Controller
 //        ], [
 //            'title.required' => 'Post title field must be filled out!',
 //            'title.max' => 'Post title must be less than 100 Character\'s!',
+//            'desc.required' => 'Post Description field must be filled out!',
 //            'image.images' => 'Image file must be png,jpeg/jpg extension!',
 //            'status.required' => 'Status field option must be selected!',
 //
 //        ]);
 
-        //        return base64_decode($id);
-        $post_id = base64_decode($id);
 
-        $post_old_data = Post::find($post_id);
+        try {
+            $image_name = $request->file('image');
 
+            if(isset($image_name)) {
+                $image_file_ext = $image_name->getClientOriginalExtension();
+                $new_image_name = rand(9999, 99999) . '_' . date('dmyHis') . '_' . rand(9999, 99999) . '.' . $image_file_ext;
 
-            try {
+                $image_name_type = $image_name->getMimeType();
 
-                $image_file = $request->file('image');
-                $image_file_ext = $image_file->getClientOriginalExtension();
+                if($image_name->isValid()) {
+                    if($image_name_type == "image/jpeg" || $image_name_type == "image/png") {
+                        unlink(public_path('uploads/images/posts/'.$post_old_data->image));
+//                        Storage::disk('public')->delete('/images/posts/'.$post_old_data->image);
 
-                $new_image_file  = rand(9999, 99999)."_".date("Ymdhis")."_".rand(9999, 99999).".".$image_file_ext;
+                        $post_update_data = [
+                            'user_id' => $request->user_id,
+                            'cat_id' => $request->cat_id,
+                            'title' => $request->title,
+                            'desc' => $request->desc,
+                            'image' => $new_image_name,
+                            'status' => $request->status,
+                        ];
 
-//              echo $new_file_name;
+                        $post_update = $post_old_data->update($post_update_data);
 
-//              return $image_file->getMimeType();
+                        if($post_update) {
 
-                if(isset($image_file)) {
-                    if($image_file->isValid()) {
-                        if($image_file->getMimeType() == "image/jpeg" || $image_file->getMimeType() == "image/png") {
-                            Storage::disk('public')->delete('/images/posts/'.$post_old_data->image);
+                            $image_name->storeAs('images/posts', $new_image_name);
+//                      $image_file->move('uploads/images/posts/', $new_image_name);
 
-                            $post_update_data = [
-                                'user_id' => auth()->user()->id,
-                                'cat_id' => $request->cat_id,
-                                'title' => $request->title,
-                                'desc' => $request->desc,
-                                'image' => $new_image_file,
-                                'status' => $request->status,
-                            ];
-
-                        $post_old_data->update($post_update_data);
-
-//                $post_old_data->cat_id = $request->cat_id;
-//                $post_old_data->title = $request->title;
-//                $post_old_data->desc = $request->desc;
-//                $post_old_data->image = $request->image;
-//                $post_old_data->status = $request->status;
-
-                        if($post_old_data) {
-
-                            $image_file->storeAs('images/posts', $new_image_file);
-//                      $image_file->move('uploads/images/users/', $new_file_name);
-
-                            $this->showMessage('success','Success, Post has been Updated with image file.');
+                            $this->showMessage('success','Success, Post info has been Updated with image file.');
                             return redirect()->route('posts.index');
 
                         } else {
-                            $this->showMessage('danger','Error, Post has not been Updated!');
+                            $this->showMessage('danger','Error, Post Info has not been Updated!');
                             return redirect()->back();
                         }
 
                     } else {
-                        $this->showMessage('danger','Error, this is not an image file!');
+                        $this->showMessage('danger','Error, This file type/extension is not valid!');
                         return redirect()->back();
                     }
 
@@ -250,37 +242,37 @@ class PostController extends Controller
 
 
 
-                } else {
-                    if(!isset($request->image)) {
-                        $post_old_data->update( [
-                            'user_id' => auth()->user()->id,
-                            'cat_id' => $request->cat_id,
-                            'title' => $request->title,
-                            'desc' => $request->desc,
-                            'image' => $post_old_data->image,
-                            'status' => $request->status,
+            } else {
+                if(!isset($request->image)) {
 
-                        ]);
+                    $post_update_data = [
+                        'user_id' => $request->user_id,
+                        'cat_id' => $request->cat_id,
+                        'title' => $request->title,
+                        'desc' => $request->desc,
+                        'image' => $post_old_data->image,
+                        'status' => $request->status,
 
-                        if($post_old_data) {
+                    ];
+                    $post_update = $post_old_data->update($post_update_data);
 
-                            $this->showMessage('success','Success, Post has been Updated without Image file!');
-                            return redirect()->route('posts.index');
+                    if($post_update) {
 
-                        }
+                        $this->showMessage('success','Success, Post Info has been Updated without Image file!');
+                        return redirect()->route('posts.index');
 
                     }
-
 
                 }
 
 
-            } catch (\Exception $e) {
-                $this->showMessage('danger','Error, Something went wrong!');
-                return redirect()->back();
-
             }
 
+
+        } catch (Exception $e) {
+            $this->showMessage('danger','Error, Something went wrong!');
+            return redirect()->back();
+        }
 
 
     }

@@ -69,14 +69,11 @@
         @if(request()->is('admin*'))
             <div class="col-md-9 blog-main">
                 @includeIf('message.message')
-
                 @yield('back-content')
             </div><!-- /.blog-main -->
         @endif
 
         <div class="col-md-8 blog-main">
-            @includeIf('message.message')
-
             @yield('front-content')
         </div><!-- /.blog-main -->
 

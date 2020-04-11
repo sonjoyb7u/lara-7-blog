@@ -33,6 +33,9 @@
         <a class="p-3 text-muted {{ request()->is('post') ? 'active' : '' }}" href="{{ route('posts.index') }}">
             POST
         </a>
+        <a class="p-3 text-muted {{ request()->is('slider') ? 'active' : '' }}" href="{{ route('sliders.index') }}">
+            SLIDER
+        </a>
     </nav>
 </div>
 

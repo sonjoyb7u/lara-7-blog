@@ -23,6 +23,11 @@
                         All Posts
                     </a>
                 </li>
+                <li style="list-style: none;">
+                    <a class="p-3 text-muted {{ request()->is('slider') ? 'active' : '' }}" href="{{ route('sliders.index') }}">
+                        All Sliders
+                    </a>
+                </li>
             </ul>
 
         </nav>
@@ -38,7 +43,6 @@
         <div class="card-body">
             <form action="{{ route('posts.update', base64_encode($post_edit_data->id)) }}" method="post" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
 
                 <div class="form-group">
                     <label for="title">Post Title</label>
@@ -56,7 +60,7 @@
                 </div>
                 <div class="form-group">
                     <label for="user_id">Post Author</label>
-                    <input disabled type="text" class="form-control" id="user_id" name="user_id" value="{{ auth()->user()->full_name }}">
+                    <input disabled type="text" class="form-control" id="user_id" name="user_id" value="{{ $post_edit_data->user->full_name }}">
                 </div>
                 <div class="form-group">
                     <label for="desc">Post Description</label>
