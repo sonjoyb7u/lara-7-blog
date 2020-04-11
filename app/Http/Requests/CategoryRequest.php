@@ -23,12 +23,35 @@ class CategoryRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-            'name' => 'required|unique:categories|max:20',
-            'slug' => 'unique:categories|max:100',
-            'status' => 'required|between:0, 1',
-        ];
+//        return [
+//            //
+//
+//        ];
+
+        if($this->method() == 'PUT') {
+            $rules = [
+                'name' => 'required|max:20',
+                'slug' => 'max:100',
+                'status' => 'required',
+            ];
+
+        } elseif($this->method() == 'PATCH') {
+            $rules = [
+                'name' => 'required|max:20',
+                'slug' => 'max:100',
+                'status' => 'required',
+            ];
+
+        } else {
+            $rules = [
+                'name' => 'required|unique:categories|max:20',
+                'slug' => 'unique:categories|max:100',
+                'status' => 'required|between:0, 1',
+            ];
+        }
+
+        return $rules;
+
     }
 
     /**

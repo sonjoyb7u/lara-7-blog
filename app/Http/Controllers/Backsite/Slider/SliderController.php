@@ -139,15 +139,6 @@ class SliderController extends Controller
 
         $slider_old_data = Slider::find($slider_id);
 
-//        $request->validate([
-//            'title'=>'required',
-//            'desc'=>'required',
-//            'image'=>'image',
-//            'link'=>'required',
-//            'status'=>'required',
-//
-//        ]);
-
         try {
             $image_name = $request->file('image');
 
@@ -200,22 +191,19 @@ class SliderController extends Controller
             } else {
                 if(!isset($request->image)) {
 
-                    $student_update_data = [
-                        "first_name"=>$request->first_name,
-                        "last_name"=>$request->last_name,
-                        "email"=>$request->email,
-                        "gender"=>$request->gender,
-                        "phone"=>$request->phone,
-                        "image"=>$slider_old_data->image,
-                        "status"=>$request->status,
+                    $slider_update_data = [
+                        'title' => $request->title,
+                        'desc' => $request->desc,
+                        'image' => $slider_old_data->image,
+                        'link' => $request->link,
+                        'status' => $request->status,
 
                     ];
-                    $slider_update = $slider_old_data->update($student_update_data);
+                    $slider_update = $slider_old_data->update($slider_update_data);
 
                     if($slider_update) {
-
-                        $this->showMessage('success','Success, Student Info has been Updated without Image file!');
-                        return redirect()->route('crudapp.crudapp.index');
+                        $this->showMessage('success','Success, Slider Info has been Updated without Image file!');
+                        return redirect()->route('sliders.index');
 
                     }
 

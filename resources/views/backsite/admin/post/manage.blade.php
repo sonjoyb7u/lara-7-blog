@@ -23,6 +23,11 @@
                         All Posts
                     </a>
                 </li>
+                <li style="list-style: none;">
+                    <a class="p-3 text-muted {{ request()->is('slider') ? 'active' : '' }}" href="{{ route('sliders.index') }}">
+                        All Sliders
+                    </a>
+                </li>
             </ul>
 
         </nav>

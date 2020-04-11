@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use App\Models\Slider;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Support\Carbon;
@@ -18,6 +19,10 @@ class FrontsiteController extends Controller
 
         $posts = Post::orderBy('id', 'desc')->simplePaginate(4);
 
+        $sliders = Slider::where('status', 1)->orderBy('id', 'asc')->get();
+
+//        return $sliders;
+
 //        $date_wise_posts = Post::whereBetween('created_at', ['2020-04-02', '2021-01-01'])->select('id', 'title', 'created_at')->get();
 
         $date_wise_posts = Post::where("created_at",">", Carbon::now()->subMonths())->get();
@@ -25,7 +30,7 @@ class FrontsiteController extends Controller
 //        dd($post_dates);
 
 
-        return view('frontsite.home', compact('categories', 'posts', 'date_wise_posts'));
+        return view('frontsite.home', compact('categories', 'posts', 'sliders', 'date_wise_posts'));
     }
 
     public function showSinglePost($id) {

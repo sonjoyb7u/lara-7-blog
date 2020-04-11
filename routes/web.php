@@ -66,10 +66,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
         Route::put('/update/{id}', 'CategoryController@update')->name('update');
         Route::delete('/delete/{id}', 'CategoryController@destroy')->name('delete');
 
+//        Route::resource('categories', 'Backsite\Category\CategoryController');
 
     });
 
-//    Route::resource('categories', 'Backsite\Category\CategoryController');
+
 
 
     Route::name('posts.')->prefix('post')->namespace('Backsite\Post')->group(function () {
@@ -78,13 +79,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
         Route::post('/store', 'PostController@store')->name('store');
         Route::get('/show/{id}', 'PostController@show')->name('view');
         Route::get('/edit/{id}', 'PostController@edit')->name('edit');
-        Route::post('/update/{id}', 'PostController@update')->name('update');
+        Route::put('/update/{id}', 'PostController@update')->name('update');
         Route::delete('/delete/{id}', 'PostController@destroy')->name('delete');
 
+//        Route::resource('posts', 'Backsite\Post\PostController');
 
     });
 
-//    Route::resource('posts', 'Backsite\Post\PostController');
+
 
     Route::name('sliders.')->prefix('slider')->namespace('Backsite\Slider')->group(function () {
         Route::get('/', 'SliderController@index')->name('index');
@@ -92,7 +94,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
         Route::post('/store', 'SliderController@store')->name('store');
         Route::get('/show/{id}', 'SliderController@show')->name('view');
         Route::get('/edit/{id}', 'SliderController@edit')->name('edit');
-        Route::post('/update/{id}', 'SliderController@update')->name('update');
+        Route::put('/update/{id}', 'SliderController@update')->name('update');
         Route::delete('/delete/{id}', 'SliderController@destroy')->name('delete');
     });
 

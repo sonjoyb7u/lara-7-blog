@@ -23,13 +23,37 @@ class PostRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-            'title' => 'required|unique:posts|max:100',
-            'desc' => 'required',
-            'image' => 'required|image',
-            'status' => 'required',
-        ];
+//        return [
+//            //
+//
+//        ];
+        if($this->method() == 'PUT') {
+            $rules = [
+                'title' => 'required|max:100',
+                'desc' => 'required',
+                'image' => 'image',
+                'status' => 'required',
+            ];
+
+        } elseif($this->method() == 'PATCH') {
+            $rules = [
+                'title' => 'required|max:100',
+                'desc' => 'required',
+                'image' => 'image',
+                'status' => 'required',
+            ];
+
+        } else {
+            $rules = [
+                'title' => 'required|unique:posts|max:100',
+                'desc' => 'required',
+                'image' => 'required|image',
+                'status' => 'required',
+            ];
+        }
+
+        return $rules;
+
     }
 
     /**
