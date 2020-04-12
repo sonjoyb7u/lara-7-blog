@@ -34,6 +34,7 @@ Route::name('blog.')->namespace('Frontsite')->group(function(){
     Route::get('/', 'FrontsiteController@index')->name('index');
     Route::get('single_post/{id}', 'FrontsiteController@showSinglePost')->name('single_post');
     Route::get('category/{slug}', 'FrontsiteController@categoryWisePost')->name('category');
+    Route::get('post-archives/{date}', 'FrontsiteController@showPostArchives')->name('post-archives');
 
 });
 

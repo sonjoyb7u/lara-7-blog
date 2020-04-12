@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e963567f-c3a9-4445-b10d-d7624a713099" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/frontsite/post-archives.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backsite/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backsite/Post/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backsite/Slider/SliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backsite/Slider/SliderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontsite/FrontsiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontsite/FrontsiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PostRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PostRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/sliders/50940_20200411055843_79311.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/sliders/53456_20200411031053_33205.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/sliders/68504_110420174957_85422.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backsite/admin/post/edit-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backsite/admin/post/edit-form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backsite/admin/post/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backsite/admin/post/manage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backsite/admin/slider/edit-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backsite/admin/slider/edit-form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/partials/jumbotron.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/partials/jumbotron.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/images/posts/76097_110420210721_41223.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/partials/right-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/partials/right-sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontsite/single-post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontsite/single-post.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,59 +26,56 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-510">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="349">
+              <caret line="36" column="76" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="76" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backsite/Post/PostController.php">
+      <file leaf-file-name="right-sidebar.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/components/partials/right-sidebar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1052">
-              <caret line="190" column="66" selection-start-line="190" selection-start-column="66" selection-end-line="190" selection-end-column="66" />
+            <state relative-caret-position="348">
+              <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrontsiteController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontsite/FrontsiteController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="95" column="147" lean-forward="true" selection-start-line="95" selection-start-column="147" selection-end-line="95" selection-end-column="147" />
               <folding>
-                <element signature="e#54#90#0#PHP" expanded="true" />
+                <element signature="e#50#86#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/backsite/admin/post/manage.blade.php">
+      <file leaf-file-name="single-post.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontsite/single-post.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="462">
+              <caret line="18" column="97" selection-start-line="18" selection-start-column="97" selection-end-line="18" selection-end-column="97" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/backsite/admin/slider/manage.blade.php">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontsite/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="25" selection-start-line="25" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="349">
+              <caret line="22" column="121" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="121" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit-form.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/backsite/admin/post/edit-form.blade.php">
+      <file leaf-file-name="post-archives.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontsite/post-archives.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="63" column="95" selection-start-line="63" selection-start-column="88" selection-end-line="63" selection-end-column="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SliderController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backsite/Slider/SliderController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-84">
-              <caret line="139" column="52" selection-start-line="139" selection-start-column="52" selection-end-line="139" selection-end-column="52" />
-              <folding>
-                <element signature="e#56#92#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="308">
+              <caret line="21" column="84" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -103,7 +94,6 @@
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Models/Post.php" />
         <option value="$PROJECT_DIR$/app/Models/Category.php" />
-        <option value="$PROJECT_DIR$/resources/views/components/partials/right-sidebar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backsite/Category/CategoryController.php" />
         <option value="$PROJECT_DIR$/resources/views/components/partials/thumbnail.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backsite/Auth/AuthController.php" />
@@ -111,7 +101,6 @@
         <option value="$PROJECT_DIR$/resources/views/frontsite/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontsite/category.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontsite/register.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontsite/single-post.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backsite/admin/category/create-form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backsite/admin/category/edit-form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backsite/admin/category/manage.blade.php" />
@@ -128,16 +117,19 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/SliderRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/backsite/admin/slider/manage.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/components/blog-master.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Frontsite/FrontsiteController.php" />
         <option value="$PROJECT_DIR$/resources/views/components/partials/jumbotron.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backsite/admin/post/edit-form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backsite/admin/slider/edit-form.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/PostRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backsite/Slider/SliderController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backsite/Post/PostController.php" />
         <option value="$PROJECT_DIR$/resources/views/backsite/admin/post/manage.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backsite/Post/PostController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/components/partials/right-sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontsite/single-post.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Frontsite/FrontsiteController.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontsite/post-archives.blade.php" />
       </list>
     </option>
   </component>
@@ -255,8 +247,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-148" />
-    <option name="y" value="93" />
+    <option name="x" value="7" />
     <option name="width" value="1365" />
     <option name="height" value="788" />
   </component>
@@ -515,17 +506,19 @@
       <workItem from="1586485240306" duration="10402000" />
       <workItem from="1586536269798" duration="3959000" />
       <workItem from="1586590875399" duration="13985000" />
-      <workItem from="1586607590701" duration="12637000" />
+      <workItem from="1586607590701" duration="22036000" />
+      <workItem from="1586670465487" duration="7888000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109906000" />
+    <option name="totallyTimeSpent" value="127193000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2655068" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26928896" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -549,19 +542,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24508321" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.29058442" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -574,7 +567,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/uploads/images/posts/28218_20200405014748_60877.jpg" />
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-660" />
@@ -615,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/components/partials/right-sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Post.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -647,9 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#40#97#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -699,13 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontsite/single-post.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -781,9 +756,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/uploads/images/sliders/52353_20200411031435_41132.png" />
-    <entry file="file://$PROJECT_DIR$/public/uploads/images/sliders/53456_20200411031053_33205.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/sliders/53456_20200411031053_33205.png" />
     <entry file="file://$PROJECT_DIR$/public/uploads/images/sliders/61851110420173852.png" />
     <entry file="file://$PROJECT_DIR$/app/Models/Slider.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -799,16 +772,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/images/sliders/50940_20200411055843_79311.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontsite/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/sliders/50940_20200411055843_79311.png" />
     <entry file="file://$PROJECT_DIR$/resources/views/components/blog-master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -816,22 +780,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontsite/FrontsiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/components/partials/jumbotron.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backsite/admin/slider/edit-form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -854,16 +804,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/images/posts/76097_110420210721_41223.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/posts/76097_110420210721_41223.jpg" />
     <entry file="file://$PROJECT_DIR$/resources/views/backsite/admin/post/edit-form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -875,19 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-84">
           <caret line="139" column="52" selection-start-line="139" selection-start-column="52" selection-end-line="139" selection-end-column="52" />
-          <folding>
-            <element signature="e#56#92#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backsite/Post/PostController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1052">
-          <caret line="190" column="66" selection-start-line="190" selection-start-column="66" selection-end-line="190" selection-end-column="66" />
-          <folding>
-            <element signature="e#54#90#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -902,6 +830,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backsite/Post/PostController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="238" column="8" selection-start-line="238" selection-start-column="8" selection-end-line="238" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="36" column="76" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/components/partials/right-sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontsite/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="22" column="121" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontsite/single-post.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="18" column="97" selection-start-line="18" selection-start-column="97" selection-end-line="18" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontsite/FrontsiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="95" column="147" lean-forward="true" selection-start-line="95" selection-start-column="147" selection-end-line="95" selection-end-column="147" />
+          <folding>
+            <element signature="e#50#86#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontsite/post-archives.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="21" column="84" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
         </state>
       </provider>
     </entry>

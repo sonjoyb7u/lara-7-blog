@@ -16,6 +16,7 @@
             <div class="blog-post">
                 <h2 class="blog-post-title">{{ $single_post->title }}</h2>
                 <p class="blog-post-meta">{{ date('d M Y', strtotime($single_post->created_at)) }} by <a href="#">{{ $single_post->user->full_name }}</a></p>
+                <span>Category : <strong class="d-inline-block mb-2 text-primary">{{ $single_post->category->name }}</strong></span>
                 <img width="100%" height="300" src="{{ asset('uploads/images/posts/'.$single_post->image) }}" alt="">
                 <h3 class="mt-3">Description : </h3>
                 <p>

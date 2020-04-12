@@ -7,12 +7,12 @@
     <div class="p-4">
         <h4 class="font-italic">Archives - ( All )</h4>
         <ol class="list-unstyled mb-0">
-            @foreach($date_wise_posts as $post)
-                <li>
-                    <a href="{{ route('blog.single_post', base64_encode($post->id)) }}">{{ $post->title }}</a>
-                    <span> - ( {{ date('d M Y', strtotime($post->created_at)) }} )</span>
-                </li>
-            @endforeach
+            @for($i=4; $i>=0; $i--)
+            <li>
+                {{--<a href="{{ route('blog.posts_archives', 'month='.$archive['month']. '&'.'year='.$archive['year']) }}">{{ $archive['month'] . ' ' . $archive['year'] }}</a>--}}
+                <a href="{{ route('blog.post-archives', date('Y-m', strtotime(-$i . ' month'))) }}">{{ date('F Y', strtotime(-$i . ' month')) }}</a>
+            </li>
+            @endfor
         </ol>
     </div>
 
